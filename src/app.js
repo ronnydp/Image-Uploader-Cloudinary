@@ -41,7 +41,7 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => res.render("index"));
 
 // Ruta para manejar la carga
-app.post("/api/upload", upload.single("image"), async (req, res) => {
+app.post("/", upload.single("image"), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ message: "No se subió ningún archivo." });
