@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Uploader</title>
+    <link rel="icon" type="image/ico" href="/img/exit.ico" />
+    <%- include(`partials/head`) %>
+  </head>
+  <body>
+    <%- include(`partials/navigation`) %>
+    <div class="container">
+      <div class="card-img">
+        <form enctype="multipart/form-data">
+          <input
+            name="image"
+            class="input-file"
+            type="file"
+            accept="image/*"
+            hidden
+          />
+          <div class="drop-area" id="drop-area">
+            <img src="/img/exit.svg" />
+            <p class="inner">
+              Drag & drop a file or <span class="select">browse files</span>
+            </p>
+            <p class="file-types">JPG, PNG or GIF - Max file size 2MB</p>
+          </div>
+        </form>
+      </div>
+      <div class="card-load">
+        <!-- Barra de Progreso -->
+        <p><strong>Uploading</strong>, please wait...</p>
+        <div id="progress-container">
+          <div id="progress-bar"></div>
+          <div id="loading-bar"></div>
+        </div>
+      </div>
+      <div class="container-buttons">
+        <button id="shareButton"><img src="/img/Link.svg" />Share</button>
+        <a id="downloadLink" href="#" download>
+          <button><img src="/img/download.svg" />Download</button>
+        </a>
+      </div>
+    </div>
+
+    <script src="/js/darkMode.js"></script>
+    <script src="/js/dropFile.js"></script>
+  </body>
+</html>
